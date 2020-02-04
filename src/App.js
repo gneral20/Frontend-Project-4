@@ -9,6 +9,15 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import AlertDismissible from './auth/components/AlertDismissible'
+import Clinics from './components/clinics/Clinics'
+// import Sidebar from './components/SideBar/Sidebar'
+import ClincCreate from './components/clinics/ClincCreate'
+import ClincEdit from './components/clinics/ClinicsEdit'
+import Waiting from './components/waitingScreen/Waiting'
+import Home from './components/Home/Home'
+import {Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react'
+
+
 
 class App extends Component {
   constructor () {
@@ -33,13 +42,18 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <Header user={user} />
-        {alerts.map((alert, index) => (
-          <AlertDismissible key={index} variant={alert.type} message={alert.message} />
-        ))}
-        <main className="container">
+       
+       <Header user={user} />
+        {/* {alerts.map((alert, index) => (
+        <AlertDismissible key={index} variant={alert.type} message={alert.message} />
+        ))} */}
+
+         <main className="container mx-auto mr-5">
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
+          )} />
+          <Route exact path='/' render={() => (
+            <Home alert={this.alert} setUser={this.setUser} />
           )} />
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
@@ -50,10 +64,26 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
-  
 
+          <AuthenticatedRoute user={user} path='/clinics' render={() => (
+            <Clinics alert={this.alert} user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} path='/waiting' render={() => (
+            <Waiting alert={this.alert} user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} exact path='/create' render={() => (
+            <ClincCreate alert={this.alert} user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} exact path='/edit' render={() => (
+            <ClincEdit alert={this.alert} user={user} />
+          )} />
+        
+    
         </main>
-      </React.Fragment>
+        </React.Fragment>
     )
   }
 }
