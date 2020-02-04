@@ -74,7 +74,7 @@ class SignUp extends Component {
           placeholder="Confirm Password"
           onChange={this.handleChange}
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Sign Up</button>
       </form>
       </div>
     )

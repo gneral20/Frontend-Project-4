@@ -64,7 +64,7 @@ class Home extends Component {
                     onChange={this.handleChange}
                   />
         
-                  <Button content='Login' primary />
+                  <Button className="btn btn-light" style={{backgroundColor:"#698474"}} content='Login' primary />
                 </Form>
               </Grid.Column>
         
