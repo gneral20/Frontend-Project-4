@@ -1,5 +1,5 @@
 .nav{
-  background: rgb(13, 140, 96);
+  background: #698474;
   color: #FFF;
   display: flex;
   flex-flow: column nowrap;
@@ -23,7 +23,11 @@
   font-size: 20px;
   color: #ffffff;
   display: block;
+  margin: 5px;
 }
 .nav a:hover {
   background: #363636;
+}
+h1 {
+  font-family: 'Pacifico', cursive
 }

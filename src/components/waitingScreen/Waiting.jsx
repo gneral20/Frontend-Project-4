@@ -26,13 +26,7 @@ class Waiting extends Component {
                 </div>  
             </div>
 
-            {/* {this.props.allClinics.map((clinic,index) =>(
-                <div class="col-md-9 col-md-push-3">
-                <h1>{clinic.name}</h1>
-                <h1>{clinic.counter}</h1>
-                <h1>{clinic.turn}</h1>
-            </div>
-            ))} */}
+           
            
         </div> 
         );

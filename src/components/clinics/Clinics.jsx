@@ -56,24 +56,24 @@ class Clinics extends Component {
                     
                     {this.props.allClinics.map((clinic,index) => (
                     <Grid.Column>
-                        <div class="card" style={{backgroundColor:"rgb(13, 140, 96)", textAlign:"center", margin:"10px"}}>
+                        <div className="card" style={{backgroundColor:"#698474", textAlign:"center", margin:"10px"}}>
                             <Link to={`/clinics/${clinic._id}`}><span style={{color:"white"}}>Show</span></Link>
-                              <div class="card-body" style={{backgroundColor:"#958a5f"}}>
+                              <div className="card-body" style={{backgroundColor:"white"}}>
                                     <h4 key={index} class="card-title">{clinic.name}</h4>
                                         {
                                             this.props.user.admin ? 
-                                            <div class="ui buttons">
-                                            <button onClick={() => this.hadleDelete(clinic._id)} class="ui button" style={{color:"red"}}>Delete</button>
-                                            <div class="or"></div>
-                                            <button onClick={() => this.props.history.push('/edit')} class="ui positive button">Edit</button>
+                                            <div className="ui buttons">
+                                            <button onClick={() => this.hadleDelete(clinic._id)} class="ui button" style={{color:"#971919"}}>Delete</button>
+                                            <div className="or"></div>
+                                            <button onClick={() => this.props.history.push('/edit')} class="ui positive button" style={{backgroundColor:"#bac7a7"}}>Edit</button>
                                             </div>
                                         :
                                             <Button as='div' labelPosition='right'>
-                                            <Button color='green' onClick={() => this.handleCounter(clinic._id)}>
+                                            <Button color='#bac7a7' onClick={() => this.handleCounter(clinic._id)}>
                                             {/* <Icon name='heart' /> */}
                                             Ticket
                                             </Button>
-                                            <Label as='a' basic color='green' pointing='left'>
+                                            <Label as='a' basic color='#bac7a7' pointing='left'>
                                                 {clinic.counter}
                                             </Label>
                                             </Button>

@@ -8,6 +8,7 @@ import {index} from './api'
 
 
 
+
 class ClincCreate extends Component {
 
    state = {
@@ -47,11 +48,14 @@ class ClincCreate extends Component {
     render() { 
         console.log(this.props.user)
         return ( 
-        <form onSubmit={this.handleSubmit}>
-            <label>Name:</label>
-            <input name="name" onChange={this.handleChange} value={this.state.clincForm.name}/>
-            <input type="submit" />
-        </form>
+        <div>
+            <form onSubmit={this.handleSubmit}>
+                <label>Name:</label>
+                <input name="name" onChange={this.handleChange} value={this.state.clincForm.name}/>
+                <input type="submit" />
+            </form>
+        </div>
+
             );
     }
 }
