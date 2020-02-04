@@ -3,6 +3,9 @@ import { withRouter } from 'react-router-dom'
 
 import { signUp, signIn } from '../api'
 import messages from '../messages'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Form} from 'react-bootstrap';
+
 
 class SignUp extends Component {
   constructor () {
@@ -40,6 +43,17 @@ class SignUp extends Component {
     const { email, password, passwordConfirmation } = this.state
 
     return (
+      <div>
+          <Form>
+            <Form.Group controlId="formGroupEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" />
+            </Form.Group>
+            <Form.Group controlId="formGroupPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" />
+            </Form.Group>
+          </Form>
       <form className='auth-form' onSubmit={this.onSignUp}>
         <h3>Sign Up</h3>
 
@@ -72,6 +86,7 @@ class SignUp extends Component {
         />
         <button type="submit">Sign Up</button>
       </form>
+      </div>
     )
   }
 }

@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {Icon, Image, Menu, Segment, Sidebar} from 'semantic-ui-react'
-import {index} from '../components/clinics/api'
 
 
-import './Header.scss'
+import '../header/Header'
 
 const authenticatedOptions = (
   <React.Fragment>
@@ -32,27 +31,21 @@ const alwaysOptions = (
   </React.Fragment>
 )
 
-
 const Header = ({ user }) => (
   <div className="nav">
     <h1>ReQueue</h1>
     
       { user && <span>Welcome, {user.email}</span>}
-      { user ? (user.admin ? authenticatedOptions : <div>
-         <h2>Clinc Name</h2>
-         <h4>Waiting: 5</h4>
-         <h4>Turn: 2</h4>
-         <h2>Clinc Name</h2>
-         <h4>Waiting: 5</h4>
-         <h4>Turn: 2</h4>
-         <h2>Clinc Name</h2>
-         <h4>Waiting: 5</h4>
-         <h4>Turn: 2</h4>
-         
-      </div> ): '' }
+      { user ? authenticatedOptions : unauthenticatedOptions }
+      { user.admin ? authenticatedOptions : 
+      <div>
+          
+      </div> 
+      }
       { alwaysOptions }
 
     </div>
+  
   
 )
 

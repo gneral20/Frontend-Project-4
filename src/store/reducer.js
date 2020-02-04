@@ -1,10 +1,10 @@
 const initialState = {
     clinics: [],
-    counter: 0
+    counter: 0,
+    clinic: {}
 }
 
 const rootReducer = (state=initialState, action) => {
-    console.log(action)
     switch (action.type) {
         case "ALL_CLINICS":
             return {
@@ -15,6 +15,11 @@ const rootReducer = (state=initialState, action) => {
             return {
                 ...state,
                 counter: action.value
+            }
+        case "ONE_CLINIC":
+            return {
+                ...state,
+                clinic: action.value
             }
             default:
                 return state;

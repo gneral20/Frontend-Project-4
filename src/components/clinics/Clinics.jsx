@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import {withRouter} from 'react-router-dom'
 import apiUrl from '../../apiConfig'
 import {index,destroy,counter} from './api'
-import { Button, Icon, Label, Grid } from 'semantic-ui-react'
+import { Button, Icon, Label, Grid,Image } from 'semantic-ui-react'
 
 class Clinics extends Component {
 
@@ -47,15 +47,18 @@ class Clinics extends Component {
     render() { 
         return ( 
 <div>
-<div class="row">
-  <div class="col-md-9 col-md-push-3">
-  <div class="card-group">
+
+<Grid doubling columns={5}>
+    <Grid.Row>
+      
+        
+      <div class="card-group" style={{justifyContent:"space-between",alignContent:"space-between",padding:"100px"}}>
                     
                     {this.props.allClinics.map((clinic,index) => (
-                    
-                        <div class="card">
-                            <img class="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap"/>
-                                <div class="card-body">
+                    <Grid.Column>
+                        <div class="card" style={{backgroundColor:"rgb(13, 140, 96)", textAlign:"center", margin:"10px"}}>
+                            <Link to={`/clinics/${clinic._id}`}><span style={{color:"white"}}>Show</span></Link>
+                              <div class="card-body" style={{backgroundColor:"#958a5f"}}>
                                     <h4 key={index} class="card-title">{clinic.name}</h4>
                                         {
                                             this.props.user.admin ? 
@@ -77,17 +80,14 @@ class Clinics extends Component {
                                         }
                                 </div>
                         </div>
-                    
+                     </Grid.Column>
                     ))}
-                </div> 
-  </div>
-  <div class="col-md-3 col-md-pull-9" style={{backgroundColor:"gray"}}>
-   <h1>Help Desk</h1>
-   <h1>About Us</h1>
-   <h1>Call Us</h1>
-   <h1>What?</h1>
-  </div>
-</div>
+        </div> 
+
+
+     
+    </Grid.Row>
+  </Grid>
 </div>
          );
     }

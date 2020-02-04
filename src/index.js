@@ -4,12 +4,15 @@ import './index.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App'
 import { HashRouter } from 'react-router-dom'
-import {createStore} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import rootReducer from './store/reducer'
 
-
-const store = createStore(rootReducer)
+const logger = store => next => action => {
+  next(action)
+  console.log(store.getState())
+}
+const store = createStore(rootReducer, applyMiddleware(logger))
 
 const appJsx = (
   <HashRouter>

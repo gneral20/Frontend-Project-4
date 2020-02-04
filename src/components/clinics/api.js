@@ -77,15 +77,14 @@ export const counter = (user,clincId) => {
     })
 }
 
-export const next = (user,newClinc) => {
+export const next = (user,clincId) => {
     return Axios({
         method:'POST',
-        url:apiUrl + '/clincs/:clincId/next',
+        url:apiUrl + `/clincs/${clincId}/next`,
         headers:{
             "Authorization":`Bearer ${user.token}`
         },
         data:{
-            clinc:newClinc
         }
     })
 }

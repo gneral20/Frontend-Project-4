@@ -10,6 +10,7 @@ import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import AlertDismissible from './auth/components/AlertDismissible'
 import Clinics from './components/clinics/Clinics'
+import Show from './components/clinics/ClinicShow'
 // import Sidebar from './components/SideBar/Sidebar'
 import ClincCreate from './components/clinics/ClincCreate'
 import ClincEdit from './components/clinics/ClinicsEdit'
@@ -43,12 +44,12 @@ class App extends Component {
     return (
       <React.Fragment>
        
-       <Header user={user} />
+       
         {/* {alerts.map((alert, index) => (
         <AlertDismissible key={index} variant={alert.type} message={alert.message} />
         ))} */}
 
-         <main className="container mx-auto mr-5">
+         <main className="container">
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
@@ -65,7 +66,7 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
 
-          <AuthenticatedRoute user={user} path='/clinics' render={() => (
+          <AuthenticatedRoute user={user} exact path='/clinics' render={() => (
             <Clinics alert={this.alert} user={user} />
           )} />
 
@@ -80,9 +81,14 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/edit' render={() => (
             <ClincEdit alert={this.alert} user={user} />
           )} />
+
+          <AuthenticatedRoute user={user} exact path='/clinics/:id' render={() => (
+          <Show alert={this.alert} user={user} />
+          )} />
         
     
         </main>
+        <Header user={user} />
         </React.Fragment>
     )
   }
