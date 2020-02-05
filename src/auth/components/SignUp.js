@@ -5,6 +5,8 @@ import { signUp, signIn } from '../api'
 import messages from '../messages'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form} from 'react-bootstrap';
+import {Link} from 'react-router-dom'
+
 
 
 class SignUp extends Component {
@@ -75,6 +77,8 @@ class SignUp extends Component {
           onChange={this.handleChange}
         />
         <button type="submit" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Sign Up</button>
+        <Link to="/" className="btn btn-light" style={{backgroundColor:"#bac7a7",width:"100px"}}>Home</Link>
+
       </form>
       </div>
     )

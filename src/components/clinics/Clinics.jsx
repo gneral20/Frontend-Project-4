@@ -47,7 +47,10 @@ class Clinics extends Component {
     render() { 
         return ( 
 <div>
-
+<div style={{textAlign: "center", color:"#698474", fontWeight:"bold"}}>
+<h2>Welcome to General Assembly</h2>
+<hr/>
+</div>
 <Grid doubling columns={5}>
     <Grid.Row>
       

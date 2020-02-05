@@ -19,7 +19,7 @@ import './Header.scss'
       <Link to="/change-password" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Change Password</Link>
       <Link to="/sign-out" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Sign Out</Link>
       <Link to="/create" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Add Clinc</Link>
-      <Link to="/waiting" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Waiting</Link>
+      <Link to="/waiting" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Informations</Link>
       <Link to="/clinics" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Clinics</Link>
   
   
@@ -63,7 +63,8 @@ import './Header.scss'
     left: "15px",
     top: "15px"}}>ReQueue</h1>
       
-        { user && <span>Welcome, {user.email}</span>}
+        { user && <div style={{textAlign:"center"}}><span style={{fontFamily:"Roboto"}}>Welcome, {user.email}</span><hr/></div>}
+      
         { user ? (user.admin ? authenticatedOptions : 
       <div>     
       {this.props.allClinics.map((clinic,index) =>(
@@ -85,10 +86,32 @@ import './Header.scss'
       <div className="signOut">
       <Link to="/sign-out" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Sign Out</Link>
       <Link to="/waiting" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Waiting</Link>
+      <Link to="/" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Home</Link>
       </div>
 
-        </div> ):''}
-        { alwaysOptions }
+        </div> ): 
+        <div>
+          <h3>Home</h3>
+          <hr/>
+          <h3>About</h3>
+          <hr/>
+          <h3>Contacts</h3>
+          <hr/>
+          <h3>Support</h3>
+          <hr/>
+          <h3>FAQ</h3>
+          <hr/>
+          <h3>Terms</h3>
+          <hr/>
+          <h3>Blog</h3>
+          <hr/>
+
+{/* 
+        <Link to="/waiting" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>About</Link>
+        <Link to="/waiting" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Contact US</Link>
+        <Link to="/waiting" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Home</Link> */}
+        </div> }
+        {/* { alwaysOptions } */}
   
       </div>
     )

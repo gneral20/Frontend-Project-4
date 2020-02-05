@@ -56,21 +56,21 @@ class Show extends Component {
     <Table.Body>
       <Table.Row>
        
-        <Table.Cell singleLine><span style={{fontSize:"25px"}}>Patients:</span><p style={{textAlign:"center"}}>{this.props.clinic.counter}</p></Table.Cell>
+        <Table.Cell singleLine><span style={{fontSize:"25px",display: "inline-block",marginRight: "377px"}}>Patients:</span><p style={{textAlign:"center",display: "inline-block"}}>{this.props.clinic.counter}</p></Table.Cell>
       
       
        
       </Table.Row>
       <Table.Row>
      
-        <Table.Cell singleLine><span style={{fontSize:"25px"}}>Now Serving:</span><p style={{textAlign:"center"}}>{this.props.clinic.turn}</p></Table.Cell>
+        <Table.Cell singleLine><span style={{fontSize:"25px",display: "inline-block",marginRight: "326px"}}>Now Serving:</span><p style={{textAlign:"center", display: "inline-block"}}>{this.props.clinic.turn}</p></Table.Cell>
        
       </Table.Row>
 
       <Table.Row>
      
       <button class="ui icon right labeled button" onClick={() => this.handleTurn(this.props.clinic._id)}>
-      <i aria-hidden="true" class="right arrow icon"></i>
+      <i aria-hidden="true" class="right arrow icon" style={{backgroundColor:"#698474"}}></i>
        Next Patient
       </button>
        

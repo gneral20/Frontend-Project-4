@@ -43,6 +43,12 @@ class Home extends Component {
       render(){
         const { email, password } = this.state
           return (
+            <div>
+              <div style={{textAlign: "center", color:"#698474", fontWeight:"bold"}}>
+              <h2>Increase Customer Service Efficiency by Reducing Waiting Times</h2>
+              <hr/>
+              </div>
+
            <Segment placeholder>
             <Grid columns={2} relaxed='very' stackable>
               <Grid.Column>
@@ -76,7 +82,7 @@ class Home extends Component {
         
             <Divider vertical>Or</Divider>
           </Segment>
-
+</div>
           )
       }
 
