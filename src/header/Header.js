@@ -15,13 +15,55 @@ import './Header.scss'
 
   const authenticatedOptions = (
     <React.Fragment>
-     
-      <Link to="/change-password" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Change Password</Link>
-      <Link to="/sign-out" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Sign Out</Link>
-      <Link to="/create" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Add Clinc</Link>
-      <Link to="/waiting" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Informations</Link>
-      <Link to="/clinics" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Clinics</Link>
-  
+    <div className="nav2">
+    <h1 id="name" style={{
+    position: "absolute",
+    left: "15px",
+    top: "15px"}}>ReQueue</h1>
+
+      <div>
+          <h3><Link to="/change-password">Change Password</Link></h3>
+          <hr/>
+          <h3><Link to="/sign-out">Sign Out</Link></h3>
+          <hr/>
+          <h3><Link to="/create">Add Clinc</Link></h3>
+          <hr/>
+          <h3><Link to="/edit">Edit Clinc</Link></h3>
+          <hr/>
+          <h3><Link to="/waiting">Informations</Link></h3>
+          <hr/>
+          <h3><Link to="/clinics">Clinics</Link></h3>
+          <hr/>
+      </div>
+
+      <div className="social1">
+          <a style={{display: "inline",bottom:"10px", right: "60px", marginLeft:"30px"}} href="https://www.google.com/" target="_blank">
+            <button class="ui facebook circular icon button">
+              <i aria-hidden="true" class="facebook icon"></i>
+            </button>
+          </a>
+
+          <a style={{display: "inline",bottom:"10px", right: "60px"}} href="https://twitter.com/meshal_qahtani" target="_blank">
+          <button class="ui twitter circular icon button">
+            <i aria-hidden="true" class="twitter icon"></i>
+          </button>
+          </a>
+
+          <a style={{display: "inline",bottom:"10px", right: "60px"}} href="https://www.linkedin.com/in/mer-alqahtani/" target="_blank">
+          <button class="ui linkedin circular icon button">
+            <i aria-hidden="true" class="linkedin icon"></i>
+          </button>
+          </a>
+
+          <a style={{display: "inline",bottom:"10px", right: "60px"}} href="https://www.google.com/" target="_blank">
+          <button class="ui google plus circular icon button">
+          <i aria-hidden="true" class="google plus icon"></i>
+          </button>
+          </a>
+</div>
+
+
+    </div>
   
     </React.Fragment>
   )
@@ -58,14 +100,14 @@ import './Header.scss'
     console.log(user)
     return(
       <div className="nav">
-      <h1 style={{
+      <h1 id="name" style={{
     position: "absolute",
     left: "15px",
     top: "15px"}}>ReQueue</h1>
       
-        { user && <div style={{textAlign:"center"}}><span style={{fontFamily:"Roboto"}}>Welcome, {user.email}</span><hr/></div>}
+        {/* { user && <div style={{textAlign:"center"}}><span style={{fontFamily:"Roboto"}}>Welcome, {user.email}</span><hr/></div>} */}
       
-        { user ? (user.admin ? authenticatedOptions : 
+      { user ? (user.admin ? authenticatedOptions : 
       <div>     
       {this.props.allClinics.map((clinic,index) =>(
       <Menu>
@@ -83,35 +125,73 @@ import './Header.scss'
       </Menu>        
       
                         ))}
-      <div className="signOut">
+      {/* <div className="signOut">
       <Link to="/sign-out" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Sign Out</Link>
       <Link to="/waiting" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Waiting</Link>
       <Link to="/" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Home</Link>
+      </div> */}
+      <div>
+      <h3><Link to="/">Home</Link></h3>
+      <hr/>
+      <h3><Link to="/waiting">Informations</Link></h3>
+      <hr/>
+      <h3><Link to="/sign-out">Sign Out</Link></h3>
+      <hr/>
       </div>
-
         </div> ): 
-        <div>
-          <h3>Home</h3>
+<div className="nav2">
+    <h1 id="name" style={{
+    position: "absolute",
+    left: "15px",
+    top: "15px"}}>ReQueue</h1>
+  <div>
+          <h3>
+          <Link to="/">About</Link>
+          </h3>
           <hr/>
-          <h3>About</h3>
+          <h3><Link to="/">Contacts</Link></h3>
           <hr/>
-          <h3>Contacts</h3>
+          <h3><Link to="/">Support</Link></h3>
           <hr/>
-          <h3>Support</h3>
+          <h3><Link to="/">FAQ</Link></h3>
           <hr/>
-          <h3>FAQ</h3>
+          <h3><Link to="/">Terms</Link></h3>
           <hr/>
-          <h3>Terms</h3>
+          <h3><Link to="/">Home</Link></h3>
           <hr/>
-          <h3>Blog</h3>
-          <hr/>
+</div>
+<div className="social1">
+          <a style={{display: "inline",bottom:"10px", right: "60px", marginLeft:"30px"}} href="https://www.google.com/" target="_blank">
+            <button class="ui facebook circular icon button">
+              <i aria-hidden="true" class="facebook icon"></i>
+            </button>
+          </a>
 
-{/* 
+          <a style={{display: "inline",bottom:"10px", right: "60px"}} href="https://twitter.com/meshal_qahtani" target="_blank">
+          <button class="ui twitter circular icon button">
+            <i aria-hidden="true" class="twitter icon"></i>
+          </button>
+          </a>
+
+          <a style={{display: "inline",bottom:"10px", right: "60px"}} href="https://www.linkedin.com/in/mer-alqahtani/" target="_blank">
+          <button class="ui linkedin circular icon button">
+            <i aria-hidden="true" class="linkedin icon"></i>
+          </button>
+          </a>
+
+          <a style={{display: "inline",bottom:"10px", right: "60px"}} href="https://www.google.com/" target="_blank">
+          <button class="ui google plus circular icon button">
+          <i aria-hidden="true" class="google plus icon"></i>
+          </button>
+          </a>
+</div>
+
+{/* { alwaysOptions }
         <Link to="/waiting" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>About</Link>
         <Link to="/waiting" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Contact US</Link>
         <Link to="/waiting" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Home</Link> */}
-        </div> }
-        {/* { alwaysOptions } */}
+</div> }
+        
   
       </div>
     )

@@ -17,6 +17,9 @@ import ClincEdit from './components/clinics/ClinicsEdit'
 import Waiting from './components/waitingScreen/Waiting'
 import Home from './components/Home/Home'
 import {Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react'
+import { ToastContainer} from 'react-toastify';
+import "../src/components/Home/Home"
+
 
 
 
@@ -43,7 +46,7 @@ class App extends Component {
 
     return (
       <React.Fragment>
-       
+        <ToastContainer/>
        
         {/* {alerts.map((alert, index) => (
         <AlertDismissible key={index} variant={alert.type} message={alert.message} />
@@ -78,7 +81,7 @@ class App extends Component {
             <ClincCreate alert={this.alert} user={user} />
           )} />
 
-          <AuthenticatedRoute user={user} exact path='/edit' render={() => (
+          <AuthenticatedRoute user={user} exact path='/:id/edit' render={() => (
             <ClincEdit alert={this.alert} user={user} />
           )} />
 

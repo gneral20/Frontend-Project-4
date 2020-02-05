@@ -6,6 +6,7 @@ import {withRouter} from 'react-router-dom'
 import apiUrl from '../../apiConfig'
 import {index,next,show} from '../clinics/api'
 import { Header, Table, Rating } from 'semantic-ui-react'
+// import ClinicsEdit from './ClinicsEdit'
 
 class Show extends Component {
 
@@ -77,7 +78,9 @@ class Show extends Component {
       </Table.Row>
 
     </Table.Body>
+    
   </Table>
+            <Link to={`/${this.props.match.params.id}/edit`}>Edit</Link>
         </div> 
         );
     }

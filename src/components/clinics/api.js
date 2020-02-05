@@ -51,13 +51,13 @@ export const destroy = (user,clincId) => {
 
 export const update = (user,updateClinc,clincId) => {
     return Axios({
-        method:'PUT',
+        method:'patch',
         url:apiUrl + `/clincs/${clincId}`,
         headers:{
             "Authorization":`Bearer ${user.token}`
         },
         data:{
-            name:updateClinc
+            clinc:{ name: updateClinc}
         }
     })
 }
