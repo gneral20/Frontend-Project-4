@@ -48,7 +48,7 @@ class ClincCreate extends Component {
     render() { 
         console.log(this.props.user)
         return ( 
-        <div>
+        <div style={{textAlign:"center"}}>
             <form onSubmit={this.handleSubmit}>
                 <label>Name:</label>
                 <input name="name" onChange={this.handleChange} value={this.state.clincForm.name}/>

@@ -68,7 +68,7 @@ class Clinics extends Component {
                                             <div className="ui buttons">
                                             <button onClick={() => this.hadleDelete(clinic._id)} class="ui button" style={{color:"#971919"}}>Delete</button>
                                             <div className="or"></div>
-                                            <button onClick={() => this.props.history.push('/edit')} class="ui positive button" style={{backgroundColor:"#bac7a7"}}>Edit</button>
+                                            <button onClick={() => this.props.history.push(`/${clinic._id}/edit`)} class="ui positive button" style={{backgroundColor:"#bac7a7"}}>Edit</button>
                                             </div>
                                         :
                                             <Button as='div' labelPosition='right'>

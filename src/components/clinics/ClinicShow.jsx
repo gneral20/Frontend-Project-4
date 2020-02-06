@@ -74,13 +74,13 @@ class Show extends Component {
       <i aria-hidden="true" class="right arrow icon" style={{backgroundColor:"#698474"}}></i>
        Next Patient
       </button>
-       
+     
       </Table.Row>
 
     </Table.Body>
     
   </Table>
-            <Link to={`/${this.props.match.params.id}/edit`}>Edit</Link>
+
         </div> 
         );
     }

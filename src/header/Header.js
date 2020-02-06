@@ -22,17 +22,15 @@ import './Header.scss'
     top: "15px"}}>ReQueue</h1>
 
       <div>
-          <h3><Link to="/change-password">Change Password</Link></h3>
-          <hr/>
-          <h3><Link to="/sign-out">Sign Out</Link></h3>
+          <h3 ><Link to="/change-password">Change Password</Link></h3>
           <hr/>
           <h3><Link to="/create">Add Clinc</Link></h3>
-          <hr/>
-          <h3><Link to="/edit">Edit Clinc</Link></h3>
           <hr/>
           <h3><Link to="/waiting">Informations</Link></h3>
           <hr/>
           <h3><Link to="/clinics">Clinics</Link></h3>
+          <hr/>
+          <h3><Link to="/sign-out">Sign Out</Link></h3>
           <hr/>
       </div>
 
@@ -110,8 +108,8 @@ import './Header.scss'
       { user ? (user.admin ? authenticatedOptions : 
       <div>     
       {this.props.allClinics.map((clinic,index) =>(
-      <Menu>
-        <Menu.Item>
+      <Menu style={{margin: "10px 30px"}}>
+        <Menu.Item style={{backgroundColor:"#e5e4cc"}}>
          {clinic.name}
         </Menu.Item>
 
@@ -130,8 +128,9 @@ import './Header.scss'
       <Link to="/waiting" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Waiting</Link>
       <Link to="/" className="btn btn-light" style={{backgroundColor:"#bac7a7"}}>Home</Link>
       </div> */}
+      <br/>
       <div>
-      <h3><Link to="/">Home</Link></h3>
+      <h3><Link to="/clinics">Home</Link></h3>
       <hr/>
       <h3><Link to="/waiting">Informations</Link></h3>
       <hr/>
@@ -144,7 +143,7 @@ import './Header.scss'
     position: "absolute",
     left: "15px",
     top: "15px"}}>ReQueue</h1>
-  <div>
+<div>
           <h3>
           <Link to="/">About</Link>
           </h3>
